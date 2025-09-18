@@ -20,7 +20,28 @@ Make the following text easier to understand:
 - What is a queue overflow and what is a queue underflow, and what is the difference between them?
 - What is the 'recursive case'?
 - Do some practice drills on recursion.
-- 
 
-### Recursive vs Iterative Traversal
+### Merge Sort
+
+- Continually breaks down an array into pieces by splitting it in half to form 'runs', 
+and splitting the halves in half to form more 'runs' and so on, 
+until each run is a list containing a single element. 
+All of the runs are then recombined into a sorted list. 
+- When merging two single-element lists, they are compared for size. 
+- Array.slice is used in Merge Sort.
+
+### Quick Sort
+
+1. Select a item that wil act as the 'pivot'. 
+2. Every item greater in value than the 'pivot' moves to the right of the pivot. 
+3. Every item less in value than the 'pivot' moves to the left of the pivot. 
+4. Once all items have been sorted into two new lists, find a new 'pivot' in each list.
+5. This will gradually subdivide lists over and over again until everything is in order.
+
+- Write some programs that implement Quick Sort on data sets of interest to you, for example, trading cards.
+
+### Other algorithms
+
+- What is intro sort?
+- What is heap sort?
 

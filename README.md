@@ -61,5 +61,10 @@ and flipping to a new page once you know. This is called a **binary search**.
 1. Find the middle index.
 2. Check the middle index.
 3. Check interatively. 
-4. 
 
+### What is a binary tree?
+
+- The four properties of a node in a binary tree: data, depth, left, and right. 
+- How do we insert a value into a binary tree?
+- How do we retrieve a node by value from a binary tree?
+- The two ways of traversing a binary tree, 'breadth-first' and 'depth-first', and how they're defined. 

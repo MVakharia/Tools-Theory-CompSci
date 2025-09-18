@@ -40,8 +40,26 @@ All of the runs are then recombined into a sorted list.
 
 - Write some programs that implement Quick Sort on data sets of interest to you, for example, trading cards.
 
-### Other algorithms
+### Other sorting algorithms
 
 - What is intro sort?
 - What is heap sort?
+
+#### What is O(log n) time?
+
+- It means that as your input size grows, 
+the number of steps taken by the algorithm grows *much more slowly.*
+
+- If you're searching through a thousand names, it might take 10 steps to sort: log(base2) of 1000 is around 10 steps.
+- If you're searching a million names, it might only take 20 steps to sort: log(base2) of 1,000,000 is around 20 steps, which is only double.
+- You'll see this level of speed for yourself when you're flipping through an Oxford dictionary:
+with every page you flip to, you're checking if the first letter of the search word has a greater or smaller index,
+and flipping to a new page once you know. This is called a **binary search**. 
+
+### Binary search
+
+1. Find the middle index.
+2. Check the middle index.
+3. Check interatively. 
+4. 
 

@@ -67,4 +67,29 @@ and flipping to a new page once you know. This is called a **binary search**.
 - The four properties of a node in a binary tree: data, depth, left, and right. 
 - How do we insert a value into a binary tree?
 - How do we retrieve a node by value from a binary tree?
-- The two ways of traversing a binary tree, 'breadth-first' and 'depth-first', and how they're defined. 
+- The two ways of traversing a binary tree: 
+'breadth-first' and 'depth-first', and how they're defined. 
+
+### Graphs in terms of networks
+
+- A graph, in terms of a network, is a web of connections. 
+- A graph consists of nodes, represented as circles, and edges, 
+represented as lines that link the nodes together.
+- A graph is a data structure. 
+
+### Graph traversal
+
+- The three methods of traversing a graph:
+'breadth-first search' (BFS), 'depth-first search' (DFS), and Dijkstra's algorithm.
+- Graph search algorithms
+- Preorder, postorder, and reverse post-order
+- Depth-first traversal
+- Breadth-first traversal
+- Dijkstra's algorithm
+
+If you want to practice with Dijkstra's algorithm before coding it, 
+use pen and paper to sketch out a graph, with nodes, edges, and edge lengths.
+Then, follow along with the Computerphile videos. 
+
+- What is a min-heap?
+- What is the runtime of Dijkstra's algorithm?

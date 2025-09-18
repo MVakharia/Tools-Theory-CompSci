@@ -38,7 +38,8 @@ All of the runs are then recombined into a sorted list.
 4. Once all items have been sorted into two new lists, find a new 'pivot' in each list.
 5. This will gradually subdivide lists over and over again until everything is in order.
 
-- Write some programs that implement Quick Sort on data sets of interest to you, for example, trading cards.
+- Write some programs that implement Quick Sort on data sets of interest to you,
+for example, trading cards.
 
 ### Other sorting algorithms
 
@@ -93,3 +94,14 @@ Then, follow along with the Computerphile videos.
 
 - What is a min-heap?
 - What is the runtime of Dijkstra's algorithm?
+- How do we code the algorithm?
+
+### Nodes
+
+- How do we implement a node in JavaScript?
+- How to set the next node: allowing it to be updated so it can be traversed
+and used in more complex data structures.
+- Validating the next node: making sure that it is of the correct datatype.
+- Getting the next node.
+- What can nodes be used for in video games?
+Ask this question to generate ideas to use for your own exercises and experiments.

@@ -108,7 +108,8 @@ Ask this question to generate ideas to use for your own exercises and experiment
 
 ### Linked Lists
 
-- Common operations on a linked list include adding nodes, removing nodes, finding nodes, and traversing (travelling through) the linked list.
+- Common operations on a linked list include adding nodes, removing nodes, 
+finding nodes, and traversing (travelling through) the linked list.
 - A linked list is made up of nodes. Each node has a pointer, which could be null, 
 or point to another node. 
 - If you want to remove a node from the middle of a singly linked list, 
@@ -134,3 +135,15 @@ then add a node to the tail node to create a new tail node?
 - We need to print each change to the console so we can track the status of the linked list.
 - `LinkedList` should be a class, with functions like `printList`,
 `addToHead`, `addToTail`, `removeHead`, and `removeTail`.
+
+### Doubly Linked Lists
+
+- What three things do we have to do when *adding* to the **head** of a doubly linked list?
+Which nodes must be updated?
+- The same question, but for the **tail** of the list? Which nodes must be updated?
+- How do we *remove* the **head** or the **tail** of a doubly linked list?
+- How do we *remove* from the **middle** of a doubly linked list? Which nodes need to be updated?
+- How do we find and *remove* a specific node by its data?
+- How do we print the nodes in the list in order from head to tail?
+- How do we implement a doubly linked list in JavaScript?
+- 

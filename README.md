@@ -146,4 +146,14 @@ Which nodes must be updated?
 - How do we find and *remove* a specific node by its data?
 - How do we print the nodes in the list in order from head to tail?
 - How do we implement a doubly linked list in JavaScript?
-- 
+
+### Queues
+
+- What is a queue, in terms of nodes?
+- How do we implement a queue in JavaScript?
+- Define the three methods of interacting with a queue: 
+**enqueue**, **dequeue**, and **peek**.
+- A queue can be implemented using a linked list as the underlying data structure.
+- What is a *bounded queue*?
+- What is *queue overflow?*
+- What is *queue underflow?*

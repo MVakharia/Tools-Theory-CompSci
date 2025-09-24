@@ -105,3 +105,32 @@ and used in more complex data structures.
 - Getting the next node.
 - What can nodes be used for in video games?
 Ask this question to generate ideas to use for your own exercises and experiments.
+
+### Linked Lists
+
+- Common operations on a linked list include adding nodes, removing nodes, finding nodes, and traversing (travelling through) the linked list.
+- A linked list is made up of nodes. Each node has a pointer, which could be null, 
+or point to another node. 
+- If you want to remove a node from the middle of a singly linked list, 
+you must edit the pointer on the preceding node so that it points to what is now the next node.
+- If you want to add a node to the end of a singly linked list, 
+you must edit the preceding pointer.
+- When you add a node to the start of a singly linked list, 
+you must set the pointer to point to what used to be the start of the list.
+- With doubly linked lists, there will be two pointers per node:
+one pointing up the list, and one pointing down.
+- The **head** node is the **first** node,
+and the **tail** node is the **last** node.
+
+Implement a linked list in JS. We want to start off with a list
+(or nothing) and be able to perform all four common operations.
+
+- We would need a 'node' class, and a way to add, remove, find, and traverse nodes.
+- How do we locate the head node,
+then add a node to the head node to create a new head node?
+- How do we locate the tail node, 
+then add a node to the tail node to create a new tail node?
+- How do we remove the head node and set the next node to be the new head node?
+- We need to print each change to the console so we can track the status of the linked list.
+- `LinkedList` should be a class, with functions like `printList`,
+`addToHead`, `addToTail`, `removeHead`, and `removeTail`.

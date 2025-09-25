@@ -155,5 +155,5 @@ Which nodes must be updated?
 **enqueue**, **dequeue**, and **peek**.
 - A queue can be implemented using a linked list as the underlying data structure.
 - What is a *bounded queue*?
-- What is *queue overflow?*
-- What is *queue underflow?*
+- What is *queue overflow*? How do we avoid it?
+- What is *queue underflow* How do we avoid it?

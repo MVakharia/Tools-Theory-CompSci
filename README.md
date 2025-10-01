@@ -339,7 +339,154 @@ return null
 ### Trees
 
 - What is a tree?
+  - Stores hierarchical data with a directed flow. 
 - How can we use a tree to store hierarchical data?
+- What is a tree data structure?
+
+What is a tree node?
+- A very simple data structure that contains two things: **data**,
+and a **list of children**, where each child is itself a tree node.
+
+
+- What is an AVL tree?
+- What is a red-black tree?
+- What is a binary tree?
+- **Directed flow** refers to the directionality of relationships between nodes:
+the direction that the edges are flowing.
+- In a tree structure, data moves **down**.
+- In a tree, two nodes that share the same parent node are **siblings**. 
+- In a tree, a node without children is referred to as a **leaf** node. 
+- A **wide** tree has parent nodes referencing many child nodes.
+- A **deep** tree has a lot of parent-child relationships, often single-child. 
+- A tree can be both wide and deep. 
+- Each movement from a parent to a child is a movement **down a level**. 
+- Depending on the direction we're counting in,
+we refer to this as either the **depth** or the **height**.
+- We refer to it as the **depth** when we're counting levels down from the root node to the leaf node. 
+- We refer to it as the **height** when we're counting levels up from a leaf node to the root node. 
+
+#### Binary tree
+
+- In a binary tree, a parent can have zero, one, or two children. 
+- The two children are known as the left child and the right child. 
+- In a **binary search tree**, a left child value must be **less than** its parent,
+and a right child value must be **greater than** its parent. 
+- At each node, we can discard **half** of the remaining possible values.
+This makes the runtime O(log n).
+
+#### Trees (continued)
+
+- We can add data to a tree. 
+- We can remove data from a tree.
+- We can traverse the tree, depth-first.
+- We can traverse the tree, breadth-first. 
+
+Challenge: Create a `TreeNode` class in JavaScript.
+
+- It must have **data**, **children**, 
+a function that **adds children**, and a function that **removes children**. 
+
+The generic steps to remove a child from a tree:
+
+```
+
+If target child is an instance of TreeNode,
+  Compare target child with each child in the children array
+  Update the children array if target child is found
+
+Else 
+  Compare target child with each child's data in the children array
+  Update the children array if target child is found
+
+If target child is not found in the children array
+  Recursively call .removeChild() for each grandchild.
+
+```
+
+Because we implemented the children as an array, 
+we can use the array `.filter()` method to update children. 
+Like with `.addChild()`, we can also use `instanceof` 
+to check if our target child is an instance of a `TreeNode`.
+
+#### Pretty Print
+
+Create a `print()` method that outputs the tree nodes like this:
+
+```
+15
+-- 3
+-- -- 6
+-- -- 9
+-- 12
+-- -- 19
+-- -- 8
+-- 0
+-- -- 10
+-- -- 19
+```
+
+#### Depth-first tree traversal
+
+Depth-first traversal visits the first child in the `children` array
+and that node’s children recursively before visiting its siblings
+and their children recursively.
+
+The algorithm for depth-first traversal is as follows:
+
+```
+For each node
+  Display its data
+  For each child in the children array, call the method recursively
+```
+
+The above pretty-printed tree can be traversed depth-wise to produce this result:
+
+```
+15
+3
+6
+9
+12
+19
+8
+0
+10
+19
+```
+
+**Challenge:** Implement a depth-first traversal function in your TreeNode class.
+
+#### Breadth-first tree traversal
+
+Breadth-first traversal visits each child in the `children` array
+starting from the first child before visiting their children
+and further layers until the bottom level is visited.
+The algorithm is as follows:
+
+```
+Assign an array to contain the current root node
+While the array is not empty
+    Extract the first tree node from the array
+    Display the tree node's data
+    Append the tree node's children to the array
+```
+
+The tree from the previous exercise can be traversed breadth-wise to produce this result:
+
+```
+15
+3
+12
+0
+6
+9
+19
+8
+10
+19
+```
+
+**Challenge:** Implement a breadth-first traversal function in your TreeNode class.
 
 ### Min/Max Heaps
 

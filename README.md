@@ -14,7 +14,12 @@
 
 Make the following text easier to understand:
 
-'In a recursive function, the “counting variable” equivalent is the argument to the recursive call. If we’re counting down to 0, for example, our base case would be the function call that receives 0 as an argument. We might design a recursive step that takes the argument passed in, decrements it by one, and calls the function again with the decremented argument. In this way, we would be moving towards 0 as our base case.'
+'In a recursive function, the “counting variable” equivalent is the argument to the recursive call. 
+If we’re counting down to 0, for example, our base case would be 
+the function call that receives 0 as an argument. 
+We might design a recursive step that takes the argument passed in, 
+decrements it by one, and calls the function again with the decremented argument. 
+In this way, we would be moving towards 0 as our base case.'
 
 - What is the difference between a stack overflow and a stack underflow?
 - What is a queue overflow and what is a queue underflow, and what is the difference between them?
@@ -488,10 +493,95 @@ The tree from the previous exercise can be traversed breadth-wise to produce thi
 
 **Challenge:** Implement a breadth-first traversal function in your TreeNode class.
 
-### Min/Max Heaps
+### Heaps
 
-- What is a min/max heap?
-- How do we implement a min/max heap?
+What is a heap?
+- Used to maintain a minimum or maximum value in a dataset. 
+
+Imagine you have a list of things to do, 
+and you need to address these tasks in order of priority. 
+A **priority queue** will ensure that you're always working on the most pressing assignment. 
+
+Heaps are commonly used to create a priority queue.
+
+Heaps tracking the maximum or minimum value are **max-heaps** or **min-heaps**. 
+
+#### The max-heap
+
+A heap that tracks the maximum value in a dataset is called a max-heap.
+
+We can think of the max-heap as a binary tree with two qualities:
+
+- The root is the maximum value of the dataset. 
+- Every child's value is less than or equal to its parent.
+
+#### The min-heap
+
+A heap that tracks the minimum value in a dataset is called a min-heap.
+
+We can think of the min-heap as a binary tree with two qualities:
+
+- The root is the minimum value of the dataset. 
+- Every child's value is greater than or equal to its parent. 
+
+#### Adding elements to the heap
+
+We can add up to two elements to a heap with only a root element.
+The elements are added as children of the root element, from left to right.
+The root makes up the first layer and the children make up the second layer.
+
+Once the heap has three elements across two layers (the root and its two children),
+we can add the third layer, which will be four elements going from left to right.
+- Two of these elements will be the left and right children of the second layer's left element.
+- The other two elements will be the left and right children of the second layer's right element.
+
+#### Adding an element: Heapifying up
+
+Sometimes we might add an invalid element to the heap: for example,
+a child that is less than the value of its parent in a min-heap.
+
+- In this case, the child value must move up the layers by swapping values with parent nodes
+until the value is in the right place. In this case, it will be in the right place
+once it is greater than or equal to its parent. This process is known as **heapifying**.
+
+#### Removing an element: Heapifying down
+
+The root node is the only element removed from a heap. 
+
+Removing a root node is messy because both of its children become orphaned.
+What we'll do instead is swap the root node's value with the value of the bottom rightmost element, which is the last element oin the array. 
+Unfortunately, this might violate the rules of min-heaping if the newly swapped child's value is less than its parent.
+If it does, we heapify down until the value is in the right place. 
+
+
+
+#### Challenge: Implement a min-heap and a max-heap in JavaScript. 
+
+Create a `MinHeap` class. It will store:
+- An array of elements within the heap.
+- A count of the elements within the heap.
+
+We'll always keep one element at the beginning of the array with the value `null`. 
+- Why is this helpful?
+
+`MinHeap` must satisfy two conditions:
+
+- The element at index 1 is the minimum value in the entire list
+- Every child element in the list must be larger than its parent. 
+
+Define `MinHeap.add()`. It will add elements into the `MinHeap.heap` array.
+
+Define `MinHeap.bubbleUp()`.
+It will maintain the heap conditions as additional elements are added.
+
+Define three helpers: `getParent()`, `getLeft()`, and `getRight()`:
+
+```
+const getParent = current => Math.floor((current / 2));
+const getLeft = current => current * 2;
+const getRight = current => current * 2 + 1;
+```
+
 
 ### Graphs
 

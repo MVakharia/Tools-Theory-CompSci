@@ -558,8 +558,8 @@ If it does, we heapify down until the value is in the right place.
 #### Challenge: Implement a min-heap and a max-heap in JavaScript. 
 
 Create a `MinHeap` class. It will store:
-- An array of elements within the heap.
-- A count of the elements within the heap.
+- An array of elements within the heap: `this.heap`
+- A count of the elements within the heap: `this.size`
 
 We'll always keep one element at the beginning of the array with the value `null`. 
 - Why is this helpful?
@@ -574,6 +574,22 @@ Define `MinHeap.add()`. It will add elements into the `MinHeap.heap` array.
 Define `MinHeap.bubbleUp()`.
 It will maintain the heap conditions as additional elements are added.
 
+- `bubbleUp()` is called by `add()`, which appends an element to `.heap`. 
+- `current` is defined within `bubbleUp()`. It points to the added element's index. 
+- The initial value of `current` is the added element's current location (the end of `.heap`).
+
+Define `MinHeap.popMin()`. It will pop the minimum value. 
+
+Define `MinHeap.heapify()`. It will reform the heap if the root node is removed.
+
+- The role of `heapify()` is similar to that of `bubbleUp()`. Look up the differences. 
+
+When heapifying, we want to choose the correct child when faced with the
+choice of either the left or right child.
+
+- The correct choice is the smaller of the two children:
+choosing the larger would stop us from maintaining our heap condition.
+
 Define three helpers: `getParent()`, `getLeft()`, and `getRight()`:
 
 ```
@@ -585,5 +601,67 @@ const getRight = current => current * 2 + 1;
 
 ### Graphs
 
-- What is a graph?
+A graph is a collection of nodes connected by edges. 
+
 - How do we represent complex data using a graph?
+
+Practice modeling a few more networks as graphs.
+
+Imagine that you were asked to model a group of people as a social network, what would be the vertices and what would be the edges?
+
+This is a tough one: how can you model a WiFi network?
+
+In a **cycle**, a path begins and ends at the same vertex.
+The vertex isn't connecting to itself with a single edge,
+but across multiple vertices and edges that link back to the first vertex.
+
+#### Weight
+
+If the edges in a graph have a **value**, **number**, or **cost** associated with them, the graph is **weighted**.
+
+- When tallying the total cost of a **path**, we add up the total cost of the edges used.
+- In a weighted graph, the path with the least number of edges is not always the cheapest. 
+
+#### Directed graphs
+
+In a directed graph, the edges are always **one-way**. 
+
+#### Representation of graphs
+
+Graphs are typically represented in two ways: an **adjacency list** or an **adjacency matrix**.
+
+##### Adjacency matrix
+
+An adjacency matrix is a **table**.
+
+- Each vertex in the graph is listed as both a row header
+and a column header in the table. 
+Therefore, the number of row and column headers are exactly the same. 
+- A cell in the table is marked **true** or **false**
+depending on whether the vertices listed in its corresponding row and column header
+are connected.
+- Since a vertex cannot connect to itself,
+all cells where the row header matches the column header are marked as **false**. 
+- If a cell's row and column header are vertices connected by an edge,
+the cell is marked as **true**.
+- In a weighted graph, the cells would be filled with numbers 
+representing the edge weights. Where the edge is absent, the cell value is 0.
+
+##### Adjacency list
+
+- An adjacency list contains a list of the vertices as its keys. 
+- In a graph without weight, paired to each key is an array of values
+(where each value is a vertex)
+- In a weighted graph, an array of objects is paired to each key,
+where each object is a key value pair representing
+each connected vertex and its distance from the key's vertex.
+
+Challenge: Model graphs, both unweighted and weighted, in JavaScript. 
+
+The graphs must have vertices, edges with costs in weighted graphs
+and no cost in unweighted graphs.
+
+Use an adjacency list to represent the graph.
+
+Question: how would we model an adjacency matrix in JavaScript?
+Is there any point when we can just use an adjancency list?

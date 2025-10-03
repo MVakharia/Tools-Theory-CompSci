@@ -636,7 +636,7 @@ An adjacency matrix is a **table**.
 
 - Each vertex in the graph is listed as both a row header
 and a column header in the table. 
-Therefore, the number of row and column headers are exactly the same. 
+Therefore, the number of row headers and column headers are exactly the same. 
 - A cell in the table is marked **true** or **false**
 depending on whether the vertices listed in its corresponding row and column header
 are connected.
@@ -653,7 +653,7 @@ representing the edge weights. Where the edge is absent, the cell value is 0.
 - In a graph without weight, paired to each key is an array of values
 (where each value is a vertex)
 - In a weighted graph, an array of objects is paired to each key,
-where each object is a key value pair representing
+where each object is a key-value pair representing
 each connected vertex and its distance from the key's vertex.
 
 Challenge: Model graphs, both unweighted and weighted, in JavaScript. 
@@ -663,5 +663,5 @@ and no cost in unweighted graphs.
 
 Use an adjacency list to represent the graph.
 
-Question: how would we model an adjacency matrix in JavaScript?
-Is there any point when we can just use an adjancency list?
+Question: How would we model an adjacency matrix in JavaScript?
+Is there any point when we can just use an adjacency list?

@@ -663,14 +663,45 @@ and no cost in unweighted graphs.
 
 Use an adjacency list to represent the graph.
 
-<<<<<<< HEAD
-Question: how would we model an adjacency matrix in JavaScript?
-Is there any point when we can just use an adjancency list?
-
 Create three classes: `Edge`, `Vertex`, and `Graph`.
 
 The `Graph` class must be flexible enough to support **directed**, **undirected**, **weighted**, and **unweighted** graphs.
-=======
-Question: How would we model an adjacency matrix in JavaScript?
-Is there any point when we can just use an adjacency list?
->>>>>>> 82b2c079ddb224223a37ba05f6555f66d9221e9d
+
+An adjacency matrix can be modelled in JS using a 2D array. 
+
+Requirements:
+- A Vertex can store any data.
+- A Vertex maintains a list of connections to other vertices, represented by a list of Edge instances.
+- A Vertex can add and remove edges going to another Vertex.
+- A Graph stores all of its vertices, represented by a list of Vertex instances.
+- A Graph knows if it is directed or undirected.
+- A Graph knows if it is weighted or unweighted.
+- A Graph can add and remove its own vertices.
+- A Graph can add and remove edges between stored vertices.
+
+Declare and implement an `.addVertex()` method within your `Graph` class.
+It will be responsible for adding vertices.
+
+Declare and implement a `.removeVertex()` method within your `Graph` class.
+It will be responsible for removng vertices. 
+
+Declare and implement an `.addEdge()` method within your `Vertex` class.
+It will connect vertices together by creating an Edge
+and adding it to the vertices’ list of edges.
+
+Our `Edge` class should have a `.start` and a `.end` property. 
+These properties mark the vertices that the edge connects
+when it is added using `.addEdge()`.
+
+Declare and implement a `removeEdge()` method within your `Vertex` class.
+The method will expect an ending `vertex` as an argument,
+and will iterate through edges until it reaches an edge that ends with said vertex. 
+
+Declare and implement graph weights 
+by adding an `isWeighted` property to your `Graph` class. 
+
+Implement direction for your graphs
+by adding an `isDirected` property to the `Graph` class. 
+
+- Every edge has a direction by default,
+so we either implement bidirectional edges OR we have one edge per direction, between vertices.

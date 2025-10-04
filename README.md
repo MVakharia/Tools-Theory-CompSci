@@ -665,3 +665,7 @@ Use an adjacency list to represent the graph.
 
 Question: how would we model an adjacency matrix in JavaScript?
 Is there any point when we can just use an adjancency list?
+
+Create three classes: `Edge`, `Vertex`, and `Graph`.
+
+The `Graph` class must be flexible enough to support **directed**, **undirected**, **weighted**, and **unweighted** graphs.
